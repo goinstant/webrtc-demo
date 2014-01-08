@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "description": "CMAC's personal website.",
+  "author": "Colin MacDonald",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.1",
+    "ejs": "0.8.5",
+    "jwt-simple": "0.1.0",
+    "passport": "0.1.17",
+    "passport-local": "0.1.6",
+    "connect-redis": "1.4.6"
+  }
+}
