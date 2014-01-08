@@ -1,6 +1,6 @@
 components
 node_modules
-config/config.js
+.env
 build
 
 *.swp
