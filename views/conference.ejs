@@ -1,6 +1,31 @@
 Conference
+
+<% script(cdn) %>
+<% script(widgets.webRTC.js) %>
+<% script(widgets.chat.js) %>
+<% script(widgets.userColors.js) %>
+<% script('/static/js/demo.js') %>
+
+<% stylesheet(widgets.webRTC.css) %>
+<% stylesheet(widgets.chat.css) %>
+
 <script type="text/javascript">
-var room = '<%- room %>';
-var token = '<%- token %>';
-console.log('data', room, token);
+  (function() {
+    data = {
+      url: '<%= url %>',
+      room: '<%= room %>',
+      token: '<%= token %>'
+    }
+
+    window.data = data;
+
+    var options = {
+      room: data.room,
+      user: data.token
+    };
+
+    var demo = new Demo(data);
+    Demo.initialize();
+
+  }());
 </script>

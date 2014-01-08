@@ -7,6 +7,7 @@ var http = require('http');
 var path = require('path');
 var config = require('./lib/util/config');
 var RedisStore = require('connect-redis')(express);
+var ejsLocals = require('ejs-locals');
 
 var app = express();
 
@@ -15,6 +16,11 @@ app.configure(function() {
   app.set('port', config.server.port || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
+  app.engine('ejs', ejsLocals);
+  app.locals({
+    _layoutFile: 'layout',
+    title: 'GoInstant WebRTC Demo'
+  });
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.cookieParser());
