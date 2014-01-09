@@ -6,5 +6,6 @@ build
 *.swp
 *.swo
 *.swn
+*.rdb
 
 .DS_Store

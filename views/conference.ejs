@@ -1,31 +1,34 @@
-Conference
-
 <% script(cdn) %>
 <% script(widgets.webRTC.js) %>
 <% script(widgets.chat.js) %>
 <% script(widgets.userColors.js) %>
-<% script('/static/js/demo.js') %>
+<% script('/js/demo.js') %>
 
 <% stylesheet(widgets.webRTC.css) %>
 <% stylesheet(widgets.chat.css) %>
+<% stylesheet('/css/conference.css') %>
 
 <script type="text/javascript">
-  (function() {
-    data = {
+  $(document).ready(function() {
+    var config = {
       url: '<%= url %>',
       room: '<%= room %>',
-      token: '<%= token %>'
-    }
-
-    window.data = data;
-
-    var options = {
-      room: data.room,
-      user: data.token
+      token: '<%= token %>',
+      webrtcContainer: $('#webrtc-container')[0],
+      chatContainer: $('#chat-container')[0]
     };
 
-    var demo = new Demo(data);
-    Demo.initialize();
-
-  }());
+    var Demo = window.goinstant.WebRTCDemo;
+    var demo = new Demo(config);
+    demo.initialize(function(err) {
+      if (err) {
+        throw err;
+      }
+    });
+  });
 </script>
+
+Conference
+
+<div id="webrtc-container" class="webrtc-container"></div>
+<div id="chat-container" class="chat-container"></div>
