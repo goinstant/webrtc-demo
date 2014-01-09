@@ -1,3 +1,7 @@
 body {
   background-color: #ff0000;
 }
+
+.error {
+  display: none;
+}

@@ -18,6 +18,24 @@
       chatContainer: $('#chat-container')[0]
     };
 
+    // Auto Copy
+    $('.join-url input').on('click', function() {
+      this.select();
+    });
+
+    var supported = goinstant.widgets.WebRTC.supported;
+    var supported = true; // TODO: remove this line
+
+    if (!supported) {
+      var error = 'Your browser does not support WebRTC. For an up-to-date' +
+                  'list of supported browsers please see www.webrtc.org';
+
+      console.log(error);
+
+      return;
+    }
+
+    // Setup Demo
     var Demo = window.goinstant.WebRTCDemo;
     var demo = new Demo(config);
     demo.initialize(function(err) {
@@ -28,7 +46,9 @@
   });
 </script>
 
-Conference
-
 <div id="webrtc-container" class="webrtc-container"></div>
 <div id="chat-container" class="chat-container"></div>
+
+<span class="join-url">
+  <span>Join URL:</span><input type="text" value="<%= joinURL %>" readonly />
+</span>

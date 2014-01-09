@@ -1,9 +1,32 @@
+<% script(widgets.webRTC.js) %>
+
 <% stylesheet('/css/home.css') %>
 
-Home
+<script type="text/javascript">
+  var supported = goinstant.widgets.WebRTC.supported;
+  supported = true; // TODO: remove this once implemented in the widget
 
-<h3>Enter your name to join a conference!</h3>
+  if (!supported) {
+    $(document).ready(function() {
+      // Handle unsupported browser
+      $('.error').css('display', 'block');
+      $('.main').css('display', 'none');
+    });
+  }
+</script>
+<div class="main">
+  <h3 class="message"><%= message %></h3>
 
-<form method="post" action="/auth">
-  <label>Name</label><input type="text" id="displayName" name="displayName" />
-</form>
+  <form class="form" method="post" action="/auth">
+    <label>Name</label><input type="text" id="displayName" name="displayName" maxlength="25" />
+  </form>
+</div>
+<div class="error">
+  <span>
+    Your browser does not support WebRTC. For an up-to-date list of
+    supported browsers please see
+    <a href="http://www.webrtc.org">
+      www.webrtc.org
+    </a>
+  </span>
+</div>

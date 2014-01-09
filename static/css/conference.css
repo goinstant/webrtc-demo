@@ -19,3 +19,17 @@ body {
   height: 300px;
   background-color: #cccccc;
 }
+
+.join-url {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  background-color: #00ff00;
+  display: inline-block;
+  z-index: 10;
+}
+
+.join-url input {
+  width: 280px;
+}
