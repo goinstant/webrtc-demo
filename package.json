@@ -1,15 +1,15 @@
 {
-  "name": "website",
+  "name": "webrtc-demo",
   "version": "0.1.0",
-  "description": "CMAC's personal website.",
-  "author": "Colin MacDonald",
+  "description": "A GoInstant web conferencing demo app using GoRTC and the WebRTC widget.",
+  "author": "GoInstant",
   "engines": {
     "node": "0.10.x"
   },
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "foreman start"
   },
   "dependencies": {
     "express": "3.3.1",
