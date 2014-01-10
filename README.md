@@ -1,14 +1,14 @@
-# GoInstant WebRTC Demo
+# GoInstant Audio and Video Demo
 
 This is a demo application using GoInstant's [GoRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/gortc.html)
 library and the [WebRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/index.html)
 Widget to create an audio and video web conferencing application.
 
-![demo screenshot](./static/img/screenshot.png)
+![demo screenshot](./screenshot.png)
 
 View the [live demo of this code here](https://webrtc-widget-demo.herokuapp.com/).
 
-## Running the Demo Yourself
+## Demo Setup
 
 ### Initial Setup
 
@@ -75,13 +75,13 @@ GOINSTANT_APP_SECRET
 
 ## Running the Demo
 
-You can choose to run the demo locally or on heroku.
+You can choose to run the demo locally or on Heroku.
 
 ### Run Locally
 
 #### Prerequisites
 
-You must have node js v0.10+ installed and redis 2.6+ server. to run the demo locally.
+You must have node js v0.10+ installed and redis 2.6+ server to run the demo locally.
 
 #### Setup
 
@@ -105,7 +105,9 @@ heroku config:pull
 
 Before running the demo on Heroku set the NODE_ENV to 'heroku':
 
-`heroku config:set NODE_ENV=heroku`
+```
+heroku config:set NODE_ENV=heroku
+```
 
 ##### Push Master
 
