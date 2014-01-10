@@ -20,10 +20,6 @@ body {
   margin: 1.5em auto 0;
 }
 
-.main > section {
-
-}
-
 .main > section > aside {
   float: left;
   padding-left: 25px;
@@ -151,6 +147,7 @@ body {
     .webrtc-container.gi-webrtc .gi-name {
       width: auto;
       padding-left: 10px;
+      padding-right: 25px;
       font-size: 1.1em;
       line-height: 1.6;
     }
@@ -208,8 +205,6 @@ body {
     #footer h6 a:hover img {
       opacity: 1;
     }
-
-
 
 /* 
    Helpers
