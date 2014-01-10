@@ -1,8 +1,8 @@
 # GoInstant WebRTC Demo
 
-This repository demonstrates the use of [GoRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/gortc.html)
-and the [WebRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/index.html)
-Widget to create a audio and video conferencing web application.
+This is a demo application using GoInstant's [GoRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/gortc.html)
+library and the [WebRTC](https://developers.goinstant.com/v1/widgets/audio_and_video/index.html)
+Widget to create an audio and video web conferencing application.
 
 ![demo screenshot](./static/img/screenshot.png)
 
