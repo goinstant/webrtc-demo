@@ -53,6 +53,8 @@ heroku config:set SECRET=YOUR_SECRET
 heroku config:set VAR_NAME=VAR_VALUE
 ```
 
+*If you are unsure about what these vars do, just leave them as their defaults.*
+
 Config vars with their default values
 
 ```
@@ -100,6 +102,10 @@ heroku config:pull
 ##### 4. Execute `foreman start` from the repo root to start the application
 
 ### Run on Heroku
+
+Before running the demo on Heroku set the NODE_ENV to 'heroku':
+
+`heroku config:set NODE_ENV=heroku`
 
 ##### Push Master
 
