@@ -1,35 +1,230 @@
 body {
-  background-color: #0000ff;
+  margin: 0;
+  background-color: #E0E6E9;
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-size: 14px;
 }
 
-.webrtc-container {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 400px;
-  height: 400px;
-  background-color: #cccccc;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.chat-container {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 300px;
-  height: 300px;
-  background-color: #cccccc;
+/* 
+   Layout
+   ========================================================================== */
+
+.main {
+  width: 900px;
+  margin: 1.5em auto 0;
+}
+
+.main > section {
+
+}
+
+.main > section > aside {
+  float: left;
+  padding-left: 25px;
+  width: 270px;
 }
 
 .join-url {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  padding: 10px;
-  background-color: #00ff00;
-  display: inline-block;
-  z-index: 10;
+  margin-bottom: 15px;
+  padding: 5px 0 10px 23px;
+  border-radius: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #444;
+  border-bottom: 1px dotted #bbb;
+  background: url(../img/icon-invite.png) no-repeat 3px 14px;
 }
 
-.join-url input {
-  width: 280px;
+  .join-url input {
+    margin-left: 10px;
+    width: 172px;
+    border-radius: 3px;
+    border: 0;
+    padding: 6px;
+    border: 1px solid #ccc;
+    color: #999;
+  }
+    
+    .join-url input:focus {
+      background: #222;
+      border-color: #222;
+      color: white;
+    }
+
+/* 
+   WebRTC Widget overrides
+   ========================================================================== */
+
+.webrtc-list {
+  margin-top: 19px;
+}
+
+.webrtc-list .gi-webrtc {
+  position: relative !important;
+}
+
+  .gi-collapse-wrapper {
+    display: none;
+  }
+
+  .gi-webrtc-centered {
+    display: block;
+    max-width: none;
+    box-shadow: none;
+  }
+
+  .webrtc-list .gi-webrtc .gi-list {
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
+  }
+
+  .webrtc-list .gi-webrtc .gi-user .gi-stream-wrapper {
+    background-color: #D3D9DB;
+  }
+
+/* 
+   Chat Widget overrides
+   ========================================================================== */
+
+.gi-chat-wrapper {
+  /*border: 0;*/
+}
+
+.gi-chat {
+  width: 245px;
+  box-shadow: none;
+}
+
+  .gi-chat .gi-message-form input {
+    width: 190px;
+  }
+
+  .gi-chat .gi-message-list {
+    height: 365px;
+  }
+
+/* 
+   Expanded Container
+   ========================================================================== */
+
+.webrtc-container {
+  position: relative;
+  float: left;
+  width: 630px;
+  height: 472px;
+  text-align: left;
+  border-radius: 5px;
+  background-color: #D3D9DB;
+}
+
+  .webrtc-container .gi-list {
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: none;
+  }
+
+    .webrtc-container.gi-webrtc .gi-user {
+      display: block;
+      margin: 0;
+    }
+
+    .webrtc-container.gi-webrtc .gi-user .gi-user-wrapper {
+      position: absolute;
+      width: auto;
+      bottom: 9px;
+      left: 9px;
+      background: white;
+      border-radius: 3px;
+      overflow: visible;
+      border: 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    }
+    .webrtc-container.gi-webrtc .gi-name {
+      width: auto;
+      padding-left: 10px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .webrtc-container.gi-webrtc .gi-user .gi-stream {
+      mask: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjQsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNjMwcHgiIGhlaWdodD0iNDcycHgiIHZpZXdCb3g9IjAgMCA2MzAgNDcyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2MzAgNDcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik02MzAsNDY3YzAsMi43NS0yLjI1LDUtNSw1SDVjLTIuNzUsMC01LTIuMjUtNS01VjVjMC0yLjc1LDIuMjUtNSw1LTVoNjIwYzIuNzUsMCw1LDIuMjUsNSw1VjQ2N3oiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K');
+      -webkit-mask-box-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjQsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNjMwcHgiIGhlaWdodD0iNDcycHgiIHZpZXdCb3g9IjAgMCA2MzAgNDcyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2MzAgNDcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik02MzAsNDY3YzAsMi43NS0yLjI1LDUtNSw1SDVjLTIuNzUsMC01LTIuMjUtNS01VjVjMC0yLjc1LDIuMjUtNSw1LTVoNjIwYzIuNzUsMCw1LDIuMjUsNSw1VjQ2N3oiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K');
+    }
+
+    .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper {
+      width: 100%;
+      height: 472px;
+      border-radius: 5px;
+      background-color: #D3D9DB;
+      background-position: center;
+    }
+
+    .webrtc-container.gi-webrtc .gi-user.gi-streaming-audio .gi-stream-wrapper {
+      background-image: url("../img/user-audio-expanded.png");
+    }
+    .webrtc-container.gi-webrtc .gi-user.gi-paused .gi-stream-wrapper {
+      background-image: url("../img/user-audio-expanded.png");
+    }
+
+/* 
+   GI Footer
+   ========================================================================== */
+
+#footer {
+  width: 100%;
+  margin-top: 0;
+  padding: .25em 0;
+  text-align: center;
+}
+  
+  #footer h6 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .7em;
+    font-weight: bold;
+  }
+    #footer h6 a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    #footer h6 a img {
+      position: relative;
+      top: 10px;
+      opacity: .8;
+    }
+    #footer h6 a:hover {
+      text-decoration: none;
+      color: #888;
+    }
+    #footer h6 a:hover img {
+      opacity: 1;
+    }
+
+
+
+/* 
+   Helpers
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
 }

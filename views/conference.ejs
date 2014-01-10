@@ -15,6 +15,7 @@
       room: '<%= room %>',
       token: '<%= token %>',
       webrtcContainer: $('#webrtc-container')[0],
+      webrtcList: $('#webrtc-list')[0],
       chatContainer: $('#chat-container')[0]
     };
 
@@ -46,9 +47,17 @@
   });
 </script>
 
-<div id="webrtc-container" class="webrtc-container"></div>
-<div id="chat-container" class="chat-container"></div>
-
-<span class="join-url">
-  <span>Join URL:</span><input type="text" value="<%= joinURL %>" readonly />
-</span>
+<div class="main">
+  <section class="cf">
+    <div id="webrtc-container" class="webrtc-container">
+    </div>
+    <aside>
+      <div class="join-url">
+        <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
+      </div>
+      <div id="chat-container" class="chat-container"></div>
+    </aside>
+  </section>
+  <div id="webrtc-list" class="webrtc-list"></div>
+</div>
+<a href="https://github.com/goinstant/webrtc"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
