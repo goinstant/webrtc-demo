@@ -13,7 +13,7 @@ var app = express();
 
 app.configure(function() {
   app.set('env', process.env.NODE_ENV || 'local');
-  app.set('port', config.server.port || 3000);
+  app.set('port', config.server.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.engine('ejs', ejsLocals);
