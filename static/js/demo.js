@@ -24,6 +24,7 @@ function Demo(config) {
 
   this._room = null;
   this._webrtcContainer = config.webrtcContainer;
+  this._webrtcList = config.webrtcList;
   this._chatContainer = config.chatContainer;
 }
 
@@ -69,7 +70,8 @@ Demo.prototype._initializeWidgets = function(cb) {
 
   var webRTC = new WebRTC({
     room: this._room,
-    expandContainer: this._webrtcContainer
+    expandContainer: this._webrtcContainer,
+    listContainer: this._webrtcList
   });
 
   var chat = new Chat({
