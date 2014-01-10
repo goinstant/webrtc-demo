@@ -19,36 +19,27 @@ View the [live demo of this code here](https://webrtc-widget-demo.herokuapp.com/
 heroku apps:create YOUR_WEBRTC_DEMO_APP
 ```
 
-##### 3. Add the GoInstant Add-on to the app
+##### 3. Add the GoInstant and RedisCould Add-on to the app
 
 ```
 heroku addons:add goinstant
+heroku addons:add rediscloud:25
 ```
 
 **Note**: The Heroku addon is currently in alpha testing! Please email
 [contact@goinstant.com](mailto:contact@goinstant.com) to request alpha access.
 
-##### 4. Continue via either the Local Setup or Heroku Setup
+### Environment Setup
 
-### Local Setup
+To run the WebRTC Demo locally or on heroku some setup is required.
 
-If you'd like to work on the todo demo on your local machine, you'll need to do some setup.
-
-#### Prerequisites
-
-You must have node js v0.10+ installed and redis 2.6+ server.
-
-#### Setup
-
-##### 1. Execute `npm install` from the repo root
-
-##### 2. Install the [heroku-config](https://github.com/ddollar/heroku-config) plugin.
+##### 1. Install the [heroku-config](https://github.com/ddollar/heroku-config) plugin.
 
 ```
 heroku plugins:install git://github.com/ddollar/heroku-config.git
 ```
 
-##### 3. Setup your environment
+##### 2. Setup your environment
 
 **Required** Set the express session secret.
 
@@ -80,26 +71,35 @@ GOINSTANT_CONNECT_URL
 GOINSTANT_APP_SECRET
 ```
 
-##### 4. Pull the heroku config (This is required for foreman to access the config variables).
+## Running the Demo
 
-```
-heroku config:pull
-```
+You can choose to run the demo locally or on heroku.
 
-##### 5. Start redis
+### Run Locally
+
+#### Prerequisites
+
+You must have node js v0.10+ installed and redis 2.6+ server. to run the demo locally.
+
+#### Setup
+
+##### 1. Execute `npm install` from the repo root
+
+##### 2. Start redis
 
 ```
 redis-server
 ```
 
+##### 3. Pull the heroku config (This is required for foreman to access the config variables).
+
+```
+heroku config:pull
+```
+
 ##### 4. Execute `foreman start` from the repo root to start the application
 
-
-### Heroku Setup
-
-
-Following initial setup, you simply have to push to the heroku git master to
-launch the app, below are a few different ways
+### Run on Heroku
 
 ##### Push Master
 
@@ -118,7 +118,6 @@ To push your branch your working on
 To push a existing tag, note that this will not work unless you have already initialized the remote repo.
 
 `git push heroku v1.0.0^{}:master`
-
 
 #### Adding Heroku Repos
 
