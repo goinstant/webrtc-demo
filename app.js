@@ -29,7 +29,7 @@ app.configure(function() {
   app.use(express.static(path.join(__dirname, 'static')));
   app.use(express.session({
     secret: config.server.secret,
-    store: new RedisStore(config.server.redisUrl)
+    store: new RedisStore(config.server.redis)
   }));
 });
 
