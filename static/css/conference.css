@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-bottom: 55px;
   background-color: #E0E6E9;
   font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 14px;
@@ -177,34 +178,73 @@ body {
    GI Footer
    ========================================================================== */
 
-#footer {
+#goinstant-header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  margin-top: 0;
-  padding: .25em 0;
-  text-align: center;
+  height: 45px;
+  padding: 0 20px;
+  z-index: 1000;
+  background: #0B5C94;
+  color: #C4E2FF;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.25);
+  font-family: sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
-  
-  #footer h6 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: .7em;
-    font-weight: bold;
+
+  #goinstant-header a {
+    color: #C6DCF3;
+    text-decoration: none;
   }
-    #footer h6 a {
-      color: #aaa;
-      text-decoration: none;
+
+    #goinstant-header a:hover {
+      color: white;
     }
-    #footer h6 a img {
+
+  #goinstant-header ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 14px;
+    list-style-type: none;
+  }
+
+    #goinstant-header ul li {
+      display: inline-block;
+      margin-left: 1em;
+    }
+
+    #goinstant-header .gi-links img {
       position: relative;
-      top: 10px;
-      opacity: .8;
+      top: 7px;
     }
-    #footer h6 a:hover {
-      text-decoration: none;
-      color: #888;
+  
+  #goinstant-header .gi-links {
+    float: left;
+  }
+
+    #goinstant-header .gi-links li:not(.gi-logo) {
+      position: relative;
+      top: -2px;
     }
-    #footer h6 a:hover img {
-      opacity: 1;
+
+  #goinstant-header .gi-social {
+    float: right;
+    padding: 11px;
+  }
+
+    #goinstant-header .gi-social .twitter-share-button {
+      margin-right: -2em;
+    }
+    
+    #goinstant-header .gi-social .gi-label {
+      position: relative;
+      top: -4px;
+      font-size: .85em;
+      margin-right: 1em;
     }
 
 /* 
