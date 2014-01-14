@@ -1,0 +1,32 @@
+<% script(widgets.webRTC.js) %>
+
+<script type="text/javascript">
+  var supported = goinstant.widgets.WebRTC.supported;
+  supported = true; // TODO: remove this once implemented in the widget
+
+  if (!supported) {
+    $(document).ready(function() {
+      // Handle unsupported browser
+      $('.gi-modal').hide();
+      $('.gi-modal.error').show();
+    });
+  }
+</script>
+<div class="gi-modal-container">
+  <div class="gi-modal-wrapper">
+    <span class="gi-modal-icon"></span>
+    <div class="gi-modal gi-enter-name">
+      <h3><%= message %></h3>
+      <form class="form gi-modal-form" method="post" action="/auth">
+        <input type="text" id="displayName" name="displayName" maxlength="25" placeholder="Your Name"/><button>Join</button>
+      </form>
+    </div>
+    <div class="gi-modal error">
+      <h3>Your browser does not support WebRTC.</h3>
+      <p>For an up-to-date list of supported browsers please see <a href="http://www.webrtc.org">www.webrtc.org</a></p>
+    </div>
+    <div id="footer">
+      <h6><a title="Get started using GoInstant" href="https://developers.goinstant.com/v1/index.html" target="_blank">Powered by <img src="../img/goinstant-white.png" alt="GoInstant"></a></h6>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<% script(cdn) %>
+<% script(widgets.webRTC.js) %>
+<% script(widgets.chat.js) %>
+<% script(widgets.userColors.js) %>
+<% script('/js/demo.js') %>
+
+<% stylesheet(widgets.webRTC.css) %>
+<% stylesheet(widgets.chat.css) %>
+<% stylesheet('/css/conference.css') %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var config = {
+      url: '<%= url %>',
+      room: '<%= room %>',
+      token: '<%= token %>',
+      webrtcContainer: $('#webrtc-container')[0],
+      webrtcList: $('#webrtc-list')[0],
+      chatContainer: $('#chat-container')[0]
+    };
+
+    // Auto Copy
+    $('.join-url input').on('click', function() {
+      this.select();
+    });
+
+    var supported = goinstant.widgets.WebRTC.supported;
+    var supported = true; // TODO: remove this line
+
+    if (!supported) {
+      var error = 'Your browser does not support WebRTC. For an up-to-date' +
+                  'list of supported browsers please see www.webrtc.org';
+
+      console.log(error);
+
+      return;
+
+    }
+
+    // Setup Demo
+    var Demo = window.goinstant.WebRTCDemo;
+    var demo = new Demo(config);
+    demo.initialize(function(err) {
+      if (err) {
+        throw err;
+      }
+    });
+  });
+</script>
+
+<div class="main">
+  <section class="cf">
+    <div id="webrtc-container" class="webrtc-container">
+    </div>
+    <aside>
+      <div class="join-url">
+        <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
+      </div>
+      <div id="chat-container" class="chat-container"></div>
+    </aside>
+  </section>
+  <div id="webrtc-list" class="webrtc-list"></div>
+</div>
+<div id="goinstant-header">
+  <ul class="gi-links">
+    <li class="gi-logo"><a href="http://www.goinstant.com/" target="_blank"><img src="../img/goinstant-white.png" alt="GoInstant Docs"></a></li>
+    <li><a href="http://goinstant.com/signup" target="_blank">Sign up free</a></li>
+    <li><a href="https://developers.goinstant.com/beta/widgets/webrtc.html" target="_blank">Docs &amp; API</a></li>
+  </ul>
+  <ul class="gi-social">
+    <li class="gi-label">Share with friends:</li>
+    <li><iframe src="../html/github-btn.html?user=goinstant&repo=webrtc&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe></li>
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="goinstant">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    <li>
+      <div class="g-plusone" data-size="medium"></div>
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/platform.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+    </li>
+  </ul>
+</div>
+<a href="https://github.com/goinstant/webrtc" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>

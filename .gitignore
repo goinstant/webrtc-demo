@@ -1,0 +1,11 @@
+components
+node_modules
+.env
+build
+
+*.swp
+*.swo
+*.swn
+*.rdb
+
+.DS_Store
