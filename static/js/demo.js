@@ -71,7 +71,8 @@ Demo.prototype._initializeWidgets = function(cb) {
   var webRTC = new WebRTC({
     room: this._room,
     expandContainer: this._webrtcContainer,
-    listContainer: this._webrtcList
+    listContainer: this._webrtcList,
+    autoStart: true
   });
 
   var chat = new Chat({
