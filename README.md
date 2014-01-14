@@ -58,6 +58,7 @@ heroku config:set VAR_NAME=VAR_VALUE
 Config vars with their default values
 
 ```
+FORCE_SSL=false
 PORT=3000
 REDIS_URL=http://localhost:6379
 NODE_ENV=local
