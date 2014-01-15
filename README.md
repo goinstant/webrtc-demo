@@ -26,9 +26,6 @@ heroku addons:add goinstant
 heroku addons:add rediscloud:25
 ```
 
-**Note**: The Heroku addon is currently in alpha testing! Please email
-[contact@goinstant.com](mailto:contact@goinstant.com) to request alpha access.
-
 ### Environment Setup
 
 To run the WebRTC Demo locally or on heroku some setup is required.
