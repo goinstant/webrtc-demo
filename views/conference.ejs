@@ -49,11 +49,14 @@
 </script>
 
 <div class="main">
-  <button class="leave-button">End Conference</button>
+  <div class="leave-modal">
+    <p>The room owner has left the conference.</p>
+  </div>
   <section class="cf">
     <div id="webrtc-container" class="webrtc-container">
     </div>
     <aside>
+      <button class="leave-button">End Conference</button>
       <div class="join-url">
         <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
       </div>
