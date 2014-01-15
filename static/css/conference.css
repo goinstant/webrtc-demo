@@ -25,14 +25,14 @@ body {
    ========================================================================== */
 
 .main {
-  width: 900px;
+  width: 860px;
   margin: 1.5em auto 0;
 }
 
 .main > section > aside {
   float: left;
   padding-left: 25px;
-  width: 270px;
+  width: 298px;
 }
 
 .join-url {
@@ -49,7 +49,7 @@ body {
 
   .join-url input {
     margin-left: 10px;
-    width: 172px;
+    width: 197px;
     border-radius: 3px;
     border: 0;
     padding: 6px;
@@ -105,16 +105,16 @@ body {
 }
 
 .gi-chat {
-  width: 245px;
+  width: 275px;
   box-shadow: none;
 }
 
   .gi-chat .gi-message-form input {
-    width: 190px;
+    width: 218px;
   }
 
   .gi-chat .gi-message-list {
-    height: 365px;
+    height: 313px;
   }
 
 /*
@@ -124,8 +124,8 @@ body {
 .webrtc-container {
   position: relative;
   float: left;
-  width: 630px;
-  height: 472px;
+  width: 559px;
+  height: 420px;
   text-align: left;
   border-radius: 5px;
   background-color: #D3D9DB;
@@ -169,7 +169,7 @@ body {
 
     .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper {
       width: 100%;
-      height: 472px;
+      height: 420px;
       border-radius: 5px;
       background-color: #D3D9DB;
       background-position: center;
