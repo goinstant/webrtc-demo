@@ -138,6 +138,7 @@ Demo.prototype._setupHost = function(cb) {
         $leaveButton.css('display', 'none');
       });
     }
+    $('section').css('display', 'none');
   });
 
   var options = {
