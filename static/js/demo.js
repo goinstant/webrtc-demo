@@ -92,7 +92,8 @@ Demo.prototype._initializeWidgets = function(cb) {
 
   this._chat = new Chat({
     room: this._room,
-    container: this._chatContainer
+    container: this._chatContainer,
+    messageExpiry: 1000 * 60 * 60 * 24
   });
 
   var tasks = [
