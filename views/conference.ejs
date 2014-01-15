@@ -14,6 +14,7 @@
       url: '<%= url %>',
       room: '<%= room %>',
       token: '<%= token %>',
+      host: '<%= host %>',
       webrtcContainer: $('#webrtc-container')[0],
       webrtcList: $('#webrtc-list')[0],
       chatContainer: $('#chat-container')[0]
@@ -48,6 +49,7 @@
 </script>
 
 <div class="main">
+  <button class="leave-button">End Conference</button>
   <section class="cf">
     <div id="webrtc-container" class="webrtc-container">
     </div>

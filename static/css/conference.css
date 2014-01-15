@@ -12,7 +12,11 @@ body {
   box-sizing: border-box;
 }
 
-/* 
+.leave-button {
+  display: none;
+}
+
+/*
    Layout
    ========================================================================== */
 
@@ -48,14 +52,14 @@ body {
     border: 1px solid #ccc;
     color: #999;
   }
-    
+
     .join-url input:focus {
       background: #222;
       border-color: #222;
       color: white;
     }
 
-/* 
+/*
    WebRTC Widget overrides
    ========================================================================== */
 
@@ -88,7 +92,7 @@ body {
     background-color: #D3D9DB;
   }
 
-/* 
+/*
    Chat Widget overrides
    ========================================================================== */
 
@@ -109,7 +113,7 @@ body {
     height: 365px;
   }
 
-/* 
+/*
    Expanded Container
    ========================================================================== */
 
@@ -174,7 +178,7 @@ body {
       background-image: url("../img/user-audio-expanded.png");
     }
 
-/* 
+/*
    GI Footer
    ========================================================================== */
 
@@ -224,7 +228,7 @@ body {
       position: relative;
       top: 7px;
     }
-  
+
   #goinstant-header .gi-links {
     float: left;
   }
@@ -242,7 +246,7 @@ body {
     #goinstant-header .gi-social .twitter-share-button {
       margin-right: -2em;
     }
-    
+
     #goinstant-header .gi-social .gi-label {
       position: relative;
       top: -4px;
@@ -250,7 +254,7 @@ body {
       margin-right: 1em;
     }
 
-/* 
+/*
    Helpers
    ========================================================================== */
 

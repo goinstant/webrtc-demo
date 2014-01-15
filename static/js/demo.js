@@ -8,6 +8,7 @@ window.goinstant.WebRTCDemo = (function() {
 /**
  * Dependencies
  */
+var $ = window.$;
 var async = window.async;
 var _ = window._;
 var goinstant = window.goinstant;
@@ -19,10 +20,16 @@ var WebRTC = goinstant.widgets.WebRTC;
 var Chat = goinstant.widgets.Chat;
 var UserColors = goinstant.widgets.UserColors;
 
+/**
+ * @const
+ */
+var LEAVE_CLASS = 'leave-button';
+
 function Demo(config) {
   this._config = config;
 
   this._room = null;
+  this._isHost = config.host;
   this._webrtcContainer = config.webrtcContainer;
   this._webrtcList = config.webrtcList;
   this._chatContainer = config.chatContainer;
@@ -31,7 +38,8 @@ function Demo(config) {
 Demo.prototype.initialize = function(cb) {
   var tasks = [
     _.bind(this._goinstantConnect, this),
-    _.bind(this._initializeWidgets, this)
+    _.bind(this._initializeWidgets, this),
+    _.bind(this._setupHost, this)
   ];
 
   async.series(tasks, function(err) {
@@ -92,6 +100,32 @@ Demo.prototype._initializeWidgets = function(cb) {
     }
 
     cb();
+  });
+};
+
+Demo.prototype._setupHost = function(cb) {
+  var $leaveButton = $('.' + LEAVE_CLASS);
+
+  if (this._isHost) {
+    $leaveButton.css('display', 'block');
+
+    this._room.self().key('host').set(true, function(err) {
+      if (err) {
+        return cb(err);
+      }
+    });
+  }
+
+  $leaveButton.on('click', function() {
+    if (this._isHost) {
+      console.log('remove keys');
+    }
+  });
+
+  this._room.on('leave', function(userObj) {
+    if (userObj.host) {
+      console.log('timeout, host left');
+    }
   });
 };
 
