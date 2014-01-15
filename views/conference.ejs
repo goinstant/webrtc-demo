@@ -14,6 +14,7 @@
       url: '<%= url %>',
       room: '<%= room %>',
       token: '<%= token %>',
+      host: '<%= host %>',
       webrtcContainer: $('#webrtc-container')[0],
       webrtcList: $('#webrtc-list')[0],
       chatContainer: $('#chat-container')[0]
@@ -25,7 +26,6 @@
     });
 
     var supported = goinstant.widgets.WebRTC.supported;
-    var supported = true; // TODO: remove this line
 
     if (!supported) {
       var error = 'Your browser does not support WebRTC. For an up-to-date' +
@@ -49,6 +49,9 @@
 </script>
 
 <div class="main">
+  <div class="leave-modal">
+    <p>The room owner has left the conference.</p>
+  </div>
   <section class="cf">
     <div id="webrtc-container" class="webrtc-container">
     </div>
@@ -60,6 +63,7 @@
     </aside>
   </section>
   <div id="webrtc-list" class="webrtc-list"></div>
+  <a href="#" class="leave-button">End Conference</a>
 </div>
 <div id="goinstant-header">
   <ul class="gi-links">

@@ -29,6 +29,7 @@ app.configure(function() {
   app.use(express.static(path.join(__dirname, 'static')));
   app.use(express.session({
     secret: config.server.secret,
+    expires: new Date(Date.now() + (24 * 60 * 60 * 1000)),
     store: new RedisStore(config.server.redis)
   }));
 });
