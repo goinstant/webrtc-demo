@@ -45,25 +45,55 @@
         throw err;
       }
     });
+
+    //Mobile Tabs
+    var tab = $('#mobile-menu li a');
+    var tab_contents = $('.tab-contents');
+
+    $tab.on('click', function() {
+      var target = $(this.rel);
+
+      $tab_contents.not(target).hide();
+      target.toggle();
+      $('$mobile-menu ul li.current').removeClass('current');
+
+      $(this).parent().addClass('current');
+
+      $tab_contents.removeClass('current');
+      $(this.rel).addClass('current');
+
+    });
   });
 </script>
 
 <div class="main">
+  <nav id="mobile-menu">
+    <ul>
+      <li class="current mobile-tab-video"><a href="#" rel="#webrtc-container">Video</a></li>
+      <li class="mobile-tab-chat"><a href="#" rel="#mobile-chat">Chat</a></li>
+      <li class="mobile-tab-settings"><a href="#" rel="#mobile-settings">Settings</a></li>
+    </ul>
+  </nav>
   <div class="leave-modal">
     <p>The room owner has left the conference.</p>
   </div>
   <section class="cf">
-    <div id="webrtc-container" class="webrtc-container">
+    <div id="webrtc-container" class="webrtc-container tab-contents current">
     </div>
-    <aside>
+    <aside id="mobile-chat" class="tab-contents">
       <div class="join-url">
         <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
       </div>
       <div id="chat-container" class="chat-container"></div>
     </aside>
+    <aside id="mobile-settings" class="tab-contents">
+      <div class="join-url">
+        <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
+      </div>
+    </aside>
   </section>
-  <div id="webrtc-list" class="webrtc-list"></div>
-  <a href="#" class="leave-button">End Conference</a>
+  <div id="webrtc-list" class="webrtc-list mobile-tab-content"></div>
+  <a href="#" class="leave-button desktop">End Conference</a>
 </div>
 <div id="goinstant-header">
   <ul class="gi-links">
