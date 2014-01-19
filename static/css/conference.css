@@ -341,235 +341,18 @@ img {
     }
 
 /*
-   Github Fork
+   Helpers
    ========================================================================== */
+
+  #mobile-menu {
+    display: none;
+  }
 
   @media screen and (max-width: 960px) {
     .gh-fork {
       display: none;
     }
   }
-
-/*
-   Android
-   ========================================================================== */
-
-@media screen and (max-width: 800px) {
-
-  body {
-    padding: 0;
-    padding-top: 45px;
-    overflow: hidden;
-  }
-    .main {
-      width: 100%;
-      height: 100%;
-      padding-top: 0;
-    }
-
-    /* Layout changes */
-    .main > section {
-      height: 63.5%;
-    }
-
-  /* List of users -- Pin to bottom */
-  .webrtc-list {
-    position: absolute;
-    bottom: 0;
-    min-height: 28%;
-    width: 100%;
-    margin-top: 0;
-    z-index: 100;
-  }
-
-    /* Make children 100% height */
-    .webrtc-list .gi-webrtc {
-      bottom: 0;
-      height: 100%;
-    }
-
-      .gi-webrtc-centered {
-        height: 100%;
-      }
-
-      .webrtc-list .gi-webrtc .gi-list {
-        height: 100%;
-        border-radius: 0;
-        border: 0;
-        overflow-y: hidden;
-      }
-
-      .gi-webrtc .gi-list-wrapper {
-        height: 100%;
-      }
-
-  /* Expanded container */
-  .webrtc-container {
-    width: 100%;
-    height: 100%;
-    margin-top: -3px;
-    background-color: #222;
-    border-radius: 0;
-  }
-
-    /* Make children 100% height */
-    .webrtc-container .gi-list {
-      height: 100%;
-    }
-
-      .webrtc-container.gi-webrtc .gi-user {
-        height: 100%;
-      }
-
-    /* Stream wrapper */
-    .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper {
-      height: 100%;
-      background-color: #222;
-      border-radius: 0;
-      border: 0;
-    }
-
-      /* Stream video */
-      .webrtc-container.gi-webrtc .gi-user .gi-stream {
-        position: relative;
-        height: auto;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        mask: none;
-        -webkit-mask-box-image: none;
-      }
-
-        /* Hacky way to keep inline styles */
-        .webrtc-container.gi-webrtc .gi-user .gi-stream[style*="transform"] {
-          -webkit-transform: translateY(-50%) scaleX(-1) !important;
-          transform: translateY(-50%) scaleX(-1) !important;
-        }
-
-   /* Make overlay controllers button size */
-  .gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay {
-    opacity: 0;
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-    /* Make buttons larger */
-    .gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div {
-      display: inline-block;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #222;
-      margin-bottom: .5em;
-      padding: 9px 11px;
-    }
-
-    /* Expaned container controls */
-    .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div {
-      display: block;
-      width: 45px;
-      height: 45px;
-      padding: 14px;
-    }
-
-    /* Hide tooltips */
-    .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div:before,
-    .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div:after {
-      display: none;
-    }
-
-      .gi-webrtc .gi-user.gi-streaming:hover .gi-stream-wrapper .gi-overlay {
-        background-color: transparent;
-        opacity: 1;
-      }
-
-      .webrtc-container.gi-webrtc .gi-user .gi-user-wrapper {
-        bottom: auto;
-        left: auto;
-        top: 9px;
-        right: 9px;
-      }
-}
-
-/*
-   Mobile Menu
-   ========================================================================== */
-
-#mobile-menu {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 45px;
-  background: white;
-  z-index: 1;
-  background: #000;
-  border-bottom: 1px solid #555;
-}
-
-  #mobile-menu ul {
-    margin: 0;
-    padding: 4px 0 0;
-    text-align: center;
-  }
-
-  #mobile-menu ul li {
-    width: 45px;
-    height: 37px;
-    display: inline-block;
-  }
-
-    #mobile-menu ul li a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 3px 3px 0 0;
-      text-indent: -9999px;
-      overflow: hidden;
-      background-image: url(../img/mobile-menu.png);
-      background-repeat: no-repeat;
-      opacity: .4;
-    }
-
-      #mobile-menu ul li.current a {
-        opacity: 1;
-      }
-
-      /* Tab icons */
-      .mobile-tab-chat a     { background-position: -45px 0; }
-      .mobile-tab-settings a { background-position: -90px 0; }
-
-@media screen and (max-width: 800px) {
-  #mobile-menu {
-    display: block;
-  }
-}
-
-  /* Tab Content */
-
-  .main > section > .tab-contents:not(.webrtc-container) {
-    display: none;
-    position: absolute;
-    float: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    padding: 13px;
-    z-index: 999;
-    background: #222;
-  }
-
-    .main > section > .current {
-      display: block;
-    }
-
-}
-
-/*
-   Helpers
-   ========================================================================== */
 
 .cf:before,
 .cf:after {
@@ -586,12 +369,12 @@ img {
 }
 
 .mobile {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (max-width: 800px) {
   .mobile {
-    display: block;
+    display: block !important;
   }
   .desktop {
     display: none !important;

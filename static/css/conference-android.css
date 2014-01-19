@@ -1,0 +1,257 @@
+/*
+   Android
+   ========================================================================== */
+
+@media screen and (max-width: 800px) {
+
+  html[data-useragent*='Android'] body {
+    padding: 0;
+    padding-top: 45px;
+    overflow: hidden;
+  }
+    html[data-useragent*='Android'] .main {
+      width: 100%;
+      height: 100%;
+      padding-top: 0;
+    }
+
+    /* Layout changes */
+    html[data-useragent*='Android'] .main > section {
+      position: relative;
+      height: 70%; /* Nexus 5 height */
+    }
+
+  /* List of users -- Pin to bottom */
+  html[data-useragent*='Android'] .webrtc-list {
+    position: absolute;
+    bottom: 0;
+    min-height: 28%;
+    width: 100%;
+    margin-top: 0;
+    z-index: 100;
+  }
+
+    /* Make children 100% height */
+    html[data-useragent*='Android'] .webrtc-list .gi-webrtc {
+      bottom: 0;
+      height: 100%;
+    }
+
+      html[data-useragent*='Android'] .gi-webrtc-centered {
+        height: 100%;
+      }
+
+      html[data-useragent*='Android'] .webrtc-list .gi-webrtc .gi-list {
+        height: 100%;
+        border-radius: 0;
+        border: 0;
+        overflow-y: hidden;
+      }
+
+      html[data-useragent*='Android'] .gi-webrtc .gi-list-wrapper {
+        height: 100%;
+      }
+
+  /* Expanded container */
+  html[data-useragent*='Android'] .webrtc-container {
+    width: 100%;
+    height: 100%;
+    margin-top: -3px;
+    background-color: #222;
+    border-radius: 0;
+  }
+
+    /* Make children 100% height */
+    html[data-useragent*='Android'] .webrtc-container .gi-list {
+      height: 100%;
+    }
+
+      html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user {
+        height: 100%;
+      }
+
+    /* Stream wrapper */
+    html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper {
+      height: 100%;
+      background-color: #222;
+      border-radius: 0;
+      border: 0;
+    }
+
+      /* Stream video */
+      html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream {
+        position: relative;
+        height: auto;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        mask: none;
+        -webkit-mask-box-image: none;
+      }
+
+        /* Hacky way to keep inline styles */
+        html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream[style*="transform"] {
+          -webkit-transform: translateY(-50%) scaleX(-1) !important;
+          transform: translateY(-50%) scaleX(-1) !important;
+        }
+
+   /* Make overlay controllers button size */
+  html[data-useragent*='Android'] .gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay {
+    opacity: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+    /* Make buttons larger */
+    html[data-useragent*='Android'] .gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #222;
+      margin-bottom: .5em;
+      padding: 9px 11px;
+    }
+
+    /* Expaned container controls */
+    html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div {
+      display: block;
+      width: 45px;
+      height: 45px;
+      padding: 14px;
+    }
+
+    /* Hide tooltips */
+    html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div:before,
+    html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-stream-wrapper .gi-overlay > div:after {
+      display: none;
+    }
+
+      html[data-useragent*='Android'] .gi-webrtc .gi-user.gi-streaming:hover .gi-stream-wrapper .gi-overlay {
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      html[data-useragent*='Android'] .webrtc-container.gi-webrtc .gi-user .gi-user-wrapper {
+        bottom: auto;
+        left: auto;
+        top: 9px;
+        right: 9px;
+      }
+}
+
+/*
+   Mobile Menu
+   ========================================================================== */
+
+html[data-useragent*='Android'] #mobile-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: white;
+  z-index: 1;
+  background: #000;
+  border-bottom: 1px solid #555;
+}
+
+  html[data-useragent*='Android'] #mobile-menu ul {
+    margin: 0;
+    padding: 4px 0 0;
+    text-align: center;
+  }
+
+  html[data-useragent*='Android'] #mobile-menu ul li {
+    width: 45px;
+    height: 37px;
+    display: inline-block;
+  }
+
+    html[data-useragent*='Android'] #mobile-menu ul li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 3px 3px 0 0;
+      text-indent: -9999px;
+      overflow: hidden;
+      background-image: url(../img/mobile-menu.png);
+      background-repeat: no-repeat;
+      opacity: .4;
+    }
+
+      html[data-useragent*='Android'] #mobile-menu ul li.current a {
+        opacity: 1;
+      }
+
+      /* Tab icons */
+      html[data-useragent*='Android'] .mobile-tab-chat a     { background-position: -45px 0; }
+      html[data-useragent*='Android'] .mobile-tab-settings a { background-position: -90px 0; }
+
+@media screen and (max-width: 800px) {
+  html[data-useragent*='Android'] #mobile-menu {
+    display: block;
+  }
+
+  /* Tab Content */
+
+  html[data-useragent*='Android'] .main > section > .tab-contents:not(.webrtc-container) {
+    display: none;
+    position: absolute;
+    float: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    z-index: 999;
+    background: #f5f5f5;
+  }
+
+    html[data-useragent*='Android'] .main > section > .current {
+      display: block;
+    }
+
+    /* Chat Tab */
+    html[data-useragent*='Android'] #mobile-chat .chat-container {
+      height: 100%;
+    }
+
+      html[data-useragent*='Android'] #mobile-chat .chat-container .gi-chat {
+        width: 100%;
+        height: 100%;
+      }
+
+      html[data-useragent*='Android'] .gi-chat .gi-message-list {
+        height: 90%;
+      }
+
+      html[data-useragent*='Android'] #mobile-chat .chat-container .gi-chat-wrapper {
+        height: 100%;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+      }
+
+    html[data-useragent*='Android'] .gi-chat .gi-message-form input {
+      width: 88%;
+    }
+
+    /* Settings Tab */
+    html[data-useragent*='Android'] #mobile-settings {
+      padding: 15px;
+    }
+
+    html[data-useragent*='Android'] #mobile-settings > div {
+      border-bottom: 1px dotted #bbb;
+      padding-bottom: 15px;
+    }
+
+    html[data-useragent*='Android'] #mobile-settings .leave-button {
+      float: none;
+      margin-top: 0;
+      padding: 10px;
+      text-align: center;
+    }
+}

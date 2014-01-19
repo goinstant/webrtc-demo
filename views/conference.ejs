@@ -7,6 +7,7 @@
 <% stylesheet(widgets.webRTC.css) %>
 <% stylesheet(widgets.chat.css) %>
 <% stylesheet('/css/conference.css') %>
+<% stylesheet('/css/conference-android.css') %>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -50,16 +51,16 @@
     var tab = $('#mobile-menu li a');
     var tab_contents = $('.tab-contents');
 
-    $tab.on('click', function() {
+    $(tab).on('click', function() {
       var target = $(this.rel);
 
-      $tab_contents.not(target).hide();
+      $(tab_contents).not(target).hide();
       target.toggle();
-      $('$mobile-menu ul li.current').removeClass('current');
+      $('#mobile-menu ul li.current').removeClass('current');
 
       $(this).parent().addClass('current');
 
-      $tab_contents.removeClass('current');
+      $(tab_contents).removeClass('current');
       $(this.rel).addClass('current');
 
     });
@@ -81,14 +82,17 @@
     <div id="webrtc-container" class="webrtc-container tab-contents current">
     </div>
     <aside id="mobile-chat" class="tab-contents">
-      <div class="join-url">
+      <div class="join-url desktop">
         <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
       </div>
       <div id="chat-container" class="chat-container"></div>
     </aside>
     <aside id="mobile-settings" class="tab-contents">
-      <div class="join-url">
+      <div class="join-url mobile">
         <span>Invite</span><input type="text" value="<%= joinURL %>" readonly />
+      </div>
+      <div>
+        <a href="#" class="leave-button mobile">End Conference</a>
       </div>
     </aside>
   </section>
