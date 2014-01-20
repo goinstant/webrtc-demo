@@ -1,6 +1,8 @@
 body {
-  background: #202930;
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
+  background: #202930;
 }
 
 * {
@@ -144,7 +146,7 @@ body {
     background: url(../img/icon-intro.png) no-repeat;
   }
 
-/* 
+/*
    Error
    ========================================================================== */
 
@@ -165,7 +167,28 @@ body {
     margin-bottom: 0;
   }
 
-/* 
+/*
+   Mobile
+   ========================================================================== */
+
+@media screen and (max-width: 800px) {
+  .gi-modal-container {
+    position: relative;
+    padding: 1em;
+  }
+    .gi-modal-wrapper {
+      min-width: 0;
+      max-width: none;
+      font-size: 1em;
+      text-align: center;
+    }
+      .gi-modal {
+        padding: 15px;
+      }
+}
+
+
+/*
    GI Footer
    ========================================================================== */
 
@@ -175,7 +198,7 @@ body {
   padding: .25em 0;
   text-align: center;
 }
-  
+
   #footer h6 {
     text-transform: uppercase;
     letter-spacing: 1px;

@@ -1,4 +1,10 @@
+html {
+  height: 100%;
+}
+
 body {
+  position: relative;
+  height: 100%;
   margin: 0;
   padding-bottom: 55px;
   background-color: #E0E6E9;
@@ -12,13 +18,18 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 /*
    Layout
    ========================================================================== */
 
 .main {
   width: 860px;
-  margin: 1.5em auto 0;
+  margin: 0 auto;
+  padding-top: 1.5em;
 }
 
 .main > section > aside {
@@ -303,19 +314,45 @@ body {
       margin-right: 1em;
     }
 
-    /*
-       Github Fork
-       ========================================================================== */
-
-      @media screen and (max-width: 960px) {
-        .gh-fork {
+    @media screen and (max-width: 800px) {
+      #goinstant-header {
+        display: none;
+        padding: 0 10px;
+        height: 35px;
+      }
+        #goinstant-header ul li {
+          margin-left: 0;
+          margin-right: 1em;
+          font-size: .85em;
+        }
+          #goinstant-header ul li:last-child {
+            margin-right: 0;
+          }
+          #goinstant-header .gi-links li:not(.gi-logo) {
+            top: 0;
+          }
+        #goinstant-header .gi-logo a {
+          width: 100px;
+          display: block;
+        }
+        #goinstant-header .gi-social {
           display: none;
         }
-      }
+    }
 
 /*
    Helpers
    ========================================================================== */
+
+  #mobile-menu {
+    display: none;
+  }
+
+  @media screen and (max-width: 960px) {
+    .gh-fork {
+      display: none;
+    }
+  }
 
 .cf:before,
 .cf:after {
@@ -329,4 +366,17 @@ body {
 
 .cf {
     *zoom: 1;
+}
+
+.mobile {
+  display: none !important;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile {
+    display: block !important;
+  }
+  .desktop {
+    display: none !important;
+  }
 }
