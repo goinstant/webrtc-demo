@@ -25,7 +25,7 @@
   html[data-useragent*='Android'] .webrtc-list {
     position: absolute;
     bottom: 0;
-    min-height: 30%;
+    min-height: 28%;
     width: 100%;
     margin-top: 0;
     z-index: 100;
@@ -264,6 +264,9 @@ html[data-useragent*='Android'] #mobile-menu {
   html[data-useragent*='Android'] .main > section {
     position: relative;
     height: 69%; /* Nexus 5 Tablet Height */
+  }
+  html[data-useragent*='Android'] .webrtc-list {
+    height: 30%;
   }
   html[data-useragent*='Android'] .gi-chat .gi-message-list {
     height: 95%;
