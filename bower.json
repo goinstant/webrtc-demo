@@ -1,0 +1,18 @@
+{
+  "name": "webrtc-demo",
+  "version": "1.2.2",
+  "description": "A GoInstant web conferencing demo app using GoRTC and the WebRTC widget.",
+  "homepage": "https://github.com/goinstant/webrtc-demo",
+  "authors": [
+    "GoInstant, a Salesforce.com company"
+  ],
+  "main": "app.js",
+  "keywords": [
+    "GoInstant"
+  ],
+  "dependencies": {
+    "goinstant-user-colors": "1.0.1",
+    "goinstant-webrtc": "1.0.6",
+    "goinstant-chat": "1.0.2"
+  }
+}

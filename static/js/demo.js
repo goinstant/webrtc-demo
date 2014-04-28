@@ -35,6 +35,7 @@ function Demo(config) {
 
   this._webrtcContainer = config.webrtcContainer;
   this._webrtcList = config.webrtcList;
+  this._iceServers = config.iceServers;
   this._chatContainer = config.chatContainer;
 
   this._webRTC = null;
@@ -87,6 +88,7 @@ Demo.prototype._initializeWidgets = function(cb) {
     room: this._room,
     expandContainer: this._webrtcContainer,
     listContainer: this._webrtcList,
+    peerConnectionConfig: this._iceServers,
     autoStart: true
   });
 

@@ -71,6 +71,20 @@ GOINSTANT_CONNECT_URL
 GOINSTANT_APP_SECRET
 ```
 
+### STUN/TURN (ice servers) configuration - Optional
+
+The demo uses the [XirSys API](http://xirsys.com/) for configuring ice servers.
+
+Create an XirSys account and configure the following using the heroku config tool:
+
+```
+XIRSYS_SECRET
+XIRSYS_IDENT
+XIRSYS_DOMAIN
+```
+
+`heroku config:set XIRSYS_SECRET=abcdefgh1234567890`
+
 ## Running the Demo
 
 You can choose to run the demo locally or on Heroku.

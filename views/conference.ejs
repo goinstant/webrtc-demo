@@ -1,13 +1,13 @@
 <% script(cdn) %>
-<% script(widgets.webRTC.js) %>
-<% script(widgets.chat.js) %>
-<% script(widgets.userColors.js) %>
-<% script('/js/demo.js') %>
+<% script("/bower_components/goinstant-webrtc/dist/webrtc.min.js") %>
+<% script("/bower_components/goinstant-chat/dist/chat.min.js") %>
+<% script("/bower_components/goinstant-user-colors/dist/user-colors.min.js") %>
+<% script("/js/demo.js") %>
 
-<% stylesheet(widgets.webRTC.css) %>
-<% stylesheet(widgets.chat.css) %>
-<% stylesheet('/css/conference.css') %>
-<% stylesheet('/css/conference-android.css') %>
+<% stylesheet("/bower_components/goinstant-webrtc/dist/webrtc.css") %>
+<% stylesheet("/bower_components/goinstant-chat/dist/chat.css") %>
+<% stylesheet("/css/conference.css") %>
+<% stylesheet("/css/conference-android.css") %>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -16,10 +16,14 @@
       room: '<%= room %>',
       token: '<%= token %>',
       host: '<%= host %>',
+      iceServers: '<%- iceServers %>',
       webrtcContainer: $('#webrtc-container')[0],
       webrtcList: $('#webrtc-list')[0],
       chatContainer: $('#chat-container')[0]
     };
+
+    var ice = config.iceServers;
+    config.iceServers = ice ? JSON.parse(ice) : ice;
 
     // Auto Copy
     $('.join-url input').on('click', function() {
