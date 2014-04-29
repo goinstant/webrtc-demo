@@ -9,7 +9,8 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "foreman start"
+    "start": "foreman start",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "express": "3.3.1",
@@ -18,6 +19,8 @@
     "connect-redis": "1.4.6",
     "lodash": "2.4.1",
     "async": "0.2.9",
-    "ejs-locals": "1.0.2"
+    "ejs-locals": "1.0.2",
+    "request": "2.34.0",
+    "bower": "1.3.3"
   }
 }
